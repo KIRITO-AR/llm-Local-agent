@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node chat.js",
-    "download-model": "node download-model.js"
+    "download-model": "node download-model.js",
+    "test": "node test-features.js"
   },
   "keywords": ["llm", "local", "chat", "node-llama-cpp"],
   "author": "",

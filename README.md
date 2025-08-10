@@ -9,6 +9,9 @@ A Node.js application that runs a powerful language model locally using `node-ll
 - 🦙 **Llama.cpp Backend**: Efficient C++ implementation for fast inference
 - 📦 **Easy Setup**: Simple installation and model download process
 - 🔧 **Configurable**: Adjustable parameters for different use cases
+- 📚 **Command System**: Built-in commands for enhanced functionality
+- 💾 **Data Management**: Conversation history, export, and statistics
+- ⚙️ **Advanced Configuration**: Persistent settings and optimization options
 
 ## Prerequisites
 
@@ -55,8 +58,22 @@ node chat.js
 ### Chat Commands
 
 - Type your message and press Enter to chat
-- Type `exit` to quit the application
+- Type `exit` or `/exit` to quit the application
 - Press `Ctrl+C` to force quit
+
+### Built-in Commands
+
+The application includes several built-in commands for enhanced functionality:
+
+- `/help` - Show available commands
+- `/config` - Display current model configuration
+- `/history` - View conversation history
+- `/clear` - Clear conversation history
+- `/stats` - Show conversation statistics
+- `/export` - Export conversation to JSON file
+- `/save` - Save current configuration
+- `/load` - Load saved configuration
+- `/reset` - Reset model configuration to defaults
 
 ### Example Conversation
 
@@ -64,16 +81,47 @@ node chat.js
 🦙 Loading model...
 📁 Model path: /path/to/models/qwen2-1_5b-instruct-q4_k_m.gguf
 ✅ Model loaded successfully!
-💬 Start chatting with your local AI! Type 'exit' to end the conversation.
+💬 Start chatting with your local AI! Type '/help' for available commands.
 
 🤖 You: Hello! Can you tell me a fun fact about space?
 🤖 AI: Of course! Did you know that there's a giant cloud of alcohol in space? 
 Sagittarius B2, a vast molecular cloud near the center of our galaxy, contains 
 billions of liters of vinyl alcohol. Cheers to that! 🚀
 
-🤖 You: exit
+🤖 You: /stats
+📊 Conversation Statistics:
+  Total Messages: 2
+  User Messages: 1
+  AI Messages: 1
+  Conversation Length: 2
+
+🤖 You: /export
+💾 Conversation exported to: conversation-2024-01-15T10-30-45-123Z.json
+
+🤖 You: /exit
 👋 Goodbye! Thanks for chatting!
 ```
+
+## Enhanced Features
+
+### Conversation Management
+- **Automatic History**: All conversations are automatically tracked with timestamps
+- **Statistics**: View detailed conversation analytics with `/stats`
+- **Export**: Save conversations to JSON files with metadata using `/export`
+- **Clear History**: Reset conversation memory with `/clear`
+
+### Configuration Management
+- **Persistent Settings**: Save and load your preferred model settings
+- **Easy Reset**: Return to default configuration with `/reset`
+- **Real-time Display**: View current settings with `/config`
+
+### Data Export Format
+Exported conversations include:
+- Timestamp and model information
+- Complete conversation history
+- Model configuration used
+- Conversation statistics
+- Message IDs for tracking
 
 ## Configuration
 
@@ -130,6 +178,24 @@ const aiResponse = await session.prompt(prompt, {
 - **Minimum**: 4GB RAM, 2GB free space
 - **Recommended**: 8GB+ RAM, 4GB free space
 - **CPU**: Multi-core processor (4+ cores recommended)
+
+## Testing
+
+### Run Feature Tests
+```bash
+npm test
+```
+This will test all enhanced features including:
+- Configuration management
+- Conversation export
+- Model file validation
+- Directory structure verification
+
+### View Demo
+```bash
+node demo.js
+```
+Shows a comprehensive overview of all available features and usage examples.
 
 ## Alternative Models
 
