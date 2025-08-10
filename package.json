@@ -1,0 +1,19 @@
+{
+  "name": "llm-local",
+  "version": "1.0.0",
+  "description": "Local LLM chat application using node-llama-cpp",
+  "main": "chat.js",
+  "type": "module",
+  "scripts": {
+    "start": "node chat.js",
+    "download-model": "node download-model.js"
+  },
+  "keywords": ["llm", "local", "chat", "node-llama-cpp"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-llama-cpp": "^2.0.0",
+    "axios": "^1.6.0",
+    "fs-extra": "^11.1.1"
+  }
+}
